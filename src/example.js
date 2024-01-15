@@ -158,3 +158,59 @@ export const _5_deep_read_write = {
     _5_deep_read_write.proxyData.res.data[1].name
   },
 }
+
+const _6_deepProxyWeek = new WeakMap()
+const _6_defWeek = new WeakMap()
+export const _6_update_top_level = {
+  count: 2,
+  defData: deepDefObserve(
+    {
+      res: {
+        code: 200,
+        message: {
+          error: null,
+        },
+        data: [
+          {
+            id: 1,
+            name: "1",
+          },
+          {
+            id: 2,
+            name: "2",
+          },
+        ],
+      },
+    },
+    _6_deepProxyWeek
+  ),
+  useObjectDefineProperty() {
+    _6_update_top_level.defData.res.code = _6_update_top_level.count++
+    _6_update_top_level.defData.res.message.error
+  },
+  proxyData: deepProxy(
+    {
+      res: {
+        code: 200,
+        message: {
+          error: null,
+        },
+        data: [
+          {
+            id: 1,
+            name: "1",
+          },
+          {
+            id: 2,
+            name: "2",
+          },
+        ],
+      },
+    },
+    _6_defWeek
+  ),
+  useProxy() {
+    _6_update_top_level.proxyData.res.code = _6_update_top_level.count++
+    _6_update_top_level.proxyData.res.message.error
+  },
+}
