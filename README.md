@@ -1,6 +1,6 @@
 # Object.defineProperty vs Proxy
 
-在线测试地址：[]()
+在线测试地址：[https://a145789.github.io/object-defineproperty-vs-proxy/](https://a145789.github.io/object-defineproperty-vs-proxy/)
 
 # 创建响应式，`Proxy` 性能更好
 
